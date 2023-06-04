@@ -25,11 +25,24 @@ const calcAge = (age) => {
     let month = Math.floor(monthDiff);
 
     let dayDiff = monthDiff - month;
-    let day = Math.floor(dayDiff * 30);
-
+    
+    const months = ['jan', 'feb', 'mar', 'apr', 'may', 'june', 'july', 'aug', 'sep', 'oct', 'dec']
+    months.forEach((_element, i) => {
+        if((i+1)%2==0){
+            daysIn = 31;
+        }
+        if(months[i]== 1){
+            daysIn = 28;
+        }
+        else{
+            daysIn = 30;
+        }
+    });
+    let day = Math.floor(dayDiff * daysIn);
     ageDisp(year, month, day);
-
 }
+
+
 
 function ageDisp(y, m, d) {
     const years = document.getElementById('years');
@@ -40,11 +53,11 @@ function ageDisp(y, m, d) {
     month.innerText = m;
     day.innerText = d;
 
-    if (years >= 0) {
-        error.style.display = 'none';
+    if (y >= 0) {
+        error.style.display = `none`;
     }
-    else {
-        error.style.display = 'block';
+    if (y < 0) {
+        error.style.display = `block`;
     }
 }
 
