@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c18d8d;
+    font-size: 1.3rem;
+    font-family: cursive;
+}
+
+.container{
+    border: 1px solid black;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container label{
+    display: block;
+    margin-bottom: 8px;
+}
+#dob{
+    margin-top: 6px;
+}
+
+.error {
+    display: none;
+}
